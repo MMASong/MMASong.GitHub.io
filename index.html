@@ -90,11 +90,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>###Number类型</p>
+<ul>
+<li><p><strong>Number是基本值类型.用来存储十进制的整数和小数.Number本身是js的内置函数.</strong><br>其中,通过new Number是实例化了一个Number的对象   ..Number直接调用只是生成了一个Number类型的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var n1 &#x3D; new Number(&#39;123&#39;)</span><br><span class="line">console.log(n1 &#x3D;&#x3D;&#x3D; 123) &#x2F;&#x2F;false</span><br><span class="line">console.log(n1 &#x3D;&#x3D; 123)&#x2F;&#x2F;true</span><br><span class="line">let n2  &#x3D;Number(&#39;123&#39;)</span><br><span class="line">console.log(n2)</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>`Number.isNaN()判断传入值是否为Number类型的特殊值NaN.是全局isNaN的更稳定版本.</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.isNaN(NaN))&#x2F;&#x2F;true</span><br><span class="line">console.log(Number.isNaN(123))&#x2F;&#x2F;false</span><br><span class="line">console.log(Number.isNaN(&#39;str&#39;))&#x2F;&#x2F;false</span><br><span class="line">console.log(typeof NaN) &#x2F;&#x2F;number</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>Number.parseInt 将字符串转化为整数,如果不能正确转换则返回NaN,是小数的话直接返回整数部分</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  console.log(Number.parseInt(&#39;34234&#39;)) &#x2F;&#x2F;34234</span><br><span class="line">    console.log(Number.parseInt(&#39;34234.435434&#39;))&#x2F;&#x2F;34234</span><br><span class="line">    console.log(Number.parseInt(&#39;sdfjkl&#39;))&#x2F;&#x2F;NaN</span><br><span class="line">   console.log(Number.parseInt(&#39;55dsfsd434&#39;)) &#x2F;&#x2F;55</span><br><span class="line">console.log(Number.parseInt(&#39;dfsf4455dsfsd434&#39;))NaN</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Number.parseFloat 将字符串转换为浮点型数字<br>整数直接返回整数, 数字加其他的字符串返回最前边数字部分</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.parseFloat(&#39;123.555&#39;)) &#x2F;&#x2F;123.555</span><br><span class="line">  console.log(Number.parseFloat(&#39;123&#39;))&#x2F;&#x2F;123</span><br><span class="line">  console.log(Number.parseFloat(&#39;4455dsfsd&#39;)) &#x2F;&#x2F;445</span><br><span class="line">console.log(Number.parseFloat(&#39;4455dsfsd434&#39;)) &#x2F;&#x2F;4455</span><br><span class="line">console.log(Number.parseFloat(&#39;dfsf4455dsfsd434&#39;))NaN</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>Number.isInteger() 判断传入值是否为整数.</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.isInteger(45))&#x2F;&#x2F;true</span><br><span class="line">console.log(Number.isInteger(45.0))&#x2F;&#x2F;true</span><br><span class="line">console.log(Number.isInteger(45.34))&#x2F;&#x2F;false</span><br><span class="line">console.log(Number.isInteger(&#39;DSFSAF&#39;))&#x2F;&#x2F;false</span><br></pre></td></tr></table></figure></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/01/Number%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3/" data-id="ckc2urg800000j0tzfyrvbvur" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/01/Number%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3/" data-id="ckc2uvype00002gtzd5s57wh9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/30/%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E7%9B%B8%E5%85%B3/" data-id="ckc2urg8m0002j0tzav9e7h9c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/06/30/%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E7%9B%B8%E5%85%B3/" data-id="ckc2uvypk00012gtz64gl6ftc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -218,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/30/hello-world/" data-id="ckc2urg8e0001j0tzb8rjeglf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/06/30/hello-world/" data-id="ckc2uvyps00022gtz2wdy64f3" class="article-share-link">Share</a>
       
       
     </footer>
