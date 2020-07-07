@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="###组件化">
+<meta name="description" content="浏览器的组成浏览器由两部分组成 渲染引擎, 和js引擎.  常见浏览器内核:IE safari chrome firfox Edge  浏览器的渲染分为四个阶段  将html解析成dom树,将css解析成样式书 将dom树和样式树合并成 渲染树 render tree 计算出渲染树的页面布局 layout 将渲染树绘制到屏幕上.    这四步不是按顺序执行的,有可能第一步没执行完,后边的就开始执行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue组件化相关">
-<meta property="og:url" content="http://yoursite.com/2020/07/01/vue%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9B%B8%E5%85%B3/index.html">
+<meta property="og:title" content="浏览器的渲染机制">
+<meta property="og:url" content="http://yoursite.com/2019/03/22/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/index.html">
 <meta property="og:site_name" content="日常总结">
-<meta property="og:description" content="###组件化">
+<meta property="og:description" content="浏览器的组成浏览器由两部分组成 渲染引擎, 和js引擎.  常见浏览器内核:IE safari chrome firfox Edge  浏览器的渲染分为四个阶段  将html解析成dom树,将css解析成样式书 将dom树和样式树合并成 渲染树 render tree 计算出渲染树的页面布局 layout 将渲染树绘制到屏幕上.    这四步不是按顺序执行的,有可能第一步没执行完,后边的就开始执行">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-01T04:46:41.000Z">
-<meta property="article:modified_time" content="2020-07-02T08:51:59.095Z">
+<meta property="article:published_time" content="2019-03-22T04:46:41.000Z">
+<meta property="article:modified_time" content="2020-07-07T12:05:30.114Z">
 <meta property="article:author" content="Song px">
 <meta name="twitter:card" content="summary">
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/01/vue组件化相关/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/22/浏览器的渲染机制/"/>
 
 
 
 
 
-  <title>vue组件化相关 | 日常总结</title>
+  <title>浏览器的渲染机制 | 日常总结</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/01/vue%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9B%B8%E5%85%B3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Song px">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue组件化相关</h1>
+          <h1 class="post-title" itemprop="name headline">浏览器的渲染机制</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-01T12:46:41+08:00">
-                2020-07-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-22T12:46:41+08:00">
+                2019-03-22
               </time>
             
 
@@ -284,8 +284,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
                   </a>
                 </span>
 
@@ -321,7 +321,34 @@
       
 
       
-        <p>###组件化</p>
+        <h4 id="浏览器的组成"><a href="#浏览器的组成" class="headerlink" title="浏览器的组成"></a>浏览器的组成</h4><p>浏览器由两部分组成 渲染引擎, 和js引擎.</p>
+<ul>
+<li><p><strong>常见浏览器内核</strong>:IE safari chrome firfox Edge</p>
+</li>
+<li><p><strong>浏览器的渲染分为四个阶段</strong></p>
+<ol>
+<li>将html解析成dom树,将css解析成样式书</li>
+<li>将dom树和样式树合并成 渲染树 render tree</li>
+<li>计算出渲染树的页面布局 layout</li>
+<li>将渲染树绘制到屏幕上.</li>
+</ol>
+</li>
+</ul>
+<p>这四步不是按顺序执行的,有可能第一步没执行完,后边的就开始执行了</p>
+<ul>
+<li><p><strong>流和绘</strong><br>流:渲染树到布局的过程叫流flow<br>绘制:布局到页面这个过程叫做绘制</p>
+</li>
+<li><p><strong>流和绘会占用大量的资源</strong><br>  他们具有阻塞效应,会消耗很多事件和计算资源</p>
+</li>
+<li><p><strong>重流和重绘的关系 :重流必然导致重绘,重绘,不一定会重流.</strong><br> 比如改变某个元素的颜色,会导致重绘,但是不会导致重流.改变页面布局一定会导致重流重绘<br>浏览器会将重流和重绘控制在相关的子渲染树上,避免不必要的性能消耗.</p>
+</li>
+</ul>
+<p>-<strong>避免减少重流和重绘的方法</strong><br>  作为开发者,我们应当尽量减少重流和重绘</p>
+<ol>
+<li>避免操作高层dom</li>
+<li>flex布局和table布局消耗很大,能不动就不动</li>
+<li>使用requestAnimationFrame 将重绘放到下次重流集中处理.</li>
+</ol>
 
       
     </div>
@@ -346,18 +373,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/01/Number%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3/" rel="next" title="Number类型相关">
-                <i class="fa fa-chevron-left"></i> Number类型相关
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/01/Map%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="prev" title="Map和对象的区别">
-                Map和对象的区别 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/06/14/%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E6%A6%82%E5%BF%B5/" rel="prev" title="迭代器的概念">
+                迭代器的概念 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -410,8 +433,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -466,6 +498,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器的组成"><span class="nav-number">1.</span> <span class="nav-text">浏览器的组成</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

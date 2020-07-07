@@ -231,163 +231,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/01/Number%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Song px">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/h.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="日常总结">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/01/Number%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3/" itemprop="url">Number类型相关</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-01T12:46:41+08:00">
-                2020-07-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h3><ul>
-<li><p><strong>Number是基本值类型.用来存储十进制的整数和小数.Number本身是js的内置函数.</strong><br>其中,通过new Number是实例化了一个Number的对象   ..Number直接调用只是生成了一个Number类型的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var n1 &#x3D; new Number(&#39;123&#39;)</span><br><span class="line">console.log(n1 &#x3D;&#x3D;&#x3D; 123) &#x2F;&#x2F;false</span><br><span class="line">console.log(n1 &#x3D;&#x3D; 123)&#x2F;&#x2F;true</span><br><span class="line">let n2  &#x3D;Number(&#39;123&#39;)</span><br><span class="line">console.log(n2)</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>`Number.isNaN()判断传入值是否为Number类型的特殊值NaN.是全局isNaN的更稳定版本.</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.isNaN(NaN))&#x2F;&#x2F;true</span><br><span class="line">console.log(Number.isNaN(123))&#x2F;&#x2F;false</span><br><span class="line">console.log(Number.isNaN(&#39;str&#39;))&#x2F;&#x2F;false</span><br><span class="line">console.log(typeof NaN) &#x2F;&#x2F;number</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>Number.parseInt 将字符串转化为整数,如果不能正确转换则返回NaN,是小数的话直接返回整数部分</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  console.log(Number.parseInt(&#39;34234&#39;)) &#x2F;&#x2F;34234</span><br><span class="line">    console.log(Number.parseInt(&#39;34234.435434&#39;))&#x2F;&#x2F;34234</span><br><span class="line">    console.log(Number.parseInt(&#39;sdfjkl&#39;))&#x2F;&#x2F;NaN</span><br><span class="line">   console.log(Number.parseInt(&#39;55dsfsd434&#39;)) &#x2F;&#x2F;55</span><br><span class="line">console.log(Number.parseInt(&#39;dfsf4455dsfsd434&#39;))NaN</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>Number.parseFloat 将字符串转换为浮点型数字<br>整数直接返回整数, 数字加其他的字符串返回最前边数字部分</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.parseFloat(&#39;123.555&#39;)) &#x2F;&#x2F;123.555</span><br><span class="line">  console.log(Number.parseFloat(&#39;123&#39;))&#x2F;&#x2F;123</span><br><span class="line">  console.log(Number.parseFloat(&#39;4455dsfsd&#39;)) &#x2F;&#x2F;445</span><br><span class="line">console.log(Number.parseFloat(&#39;4455dsfsd434&#39;)) &#x2F;&#x2F;4455</span><br><span class="line">console.log(Number.parseFloat(&#39;dfsf4455dsfsd434&#39;))NaN</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>Number.isInteger() 判断传入值是否为整数.</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.isInteger(45))&#x2F;&#x2F;true</span><br><span class="line">console.log(Number.isInteger(45.0))&#x2F;&#x2F;true</span><br><span class="line">console.log(Number.isInteger(45.34))&#x2F;&#x2F;false</span><br><span class="line">console.log(Number.isInteger(&#39;DSFSAF&#39;))&#x2F;&#x2F;false</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>**Number.prototype.toFixed 将传入值 四舍五入保留几位.</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; 134234.299</span><br><span class="line">console.log(num.toFixed(2))&#x2F;&#x2F;134234.30</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/01/Map%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8C%BA%E5%88%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -547,6 +390,305 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/01/vue%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9B%B8%E5%85%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Song px">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/h.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="日常总结">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/01/vue%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9B%B8%E5%85%B3/" itemprop="url">vue组件化相关</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-01T12:46:41+08:00">
+                2020-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>###组件化</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/01/Number%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Song px">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/h.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="日常总结">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/01/Number%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3/" itemprop="url">Number类型相关</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-01T12:46:41+08:00">
+                2020-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h3><ul>
+<li><p><strong>Number是基本值类型.用来存储十进制的整数和小数.Number本身是js的内置函数.</strong><br>其中,通过new Number是实例化了一个Number的对象   ..Number直接调用只是生成了一个Number类型的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var n1 &#x3D; new Number(&#39;123&#39;)</span><br><span class="line">console.log(n1 &#x3D;&#x3D;&#x3D; 123) &#x2F;&#x2F;false</span><br><span class="line">console.log(n1 &#x3D;&#x3D; 123)&#x2F;&#x2F;true</span><br><span class="line">let n2  &#x3D;Number(&#39;123&#39;)</span><br><span class="line">console.log(n2)</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>`Number.isNaN()判断传入值是否为Number类型的特殊值NaN.是全局isNaN的更稳定版本.</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.isNaN(NaN))&#x2F;&#x2F;true</span><br><span class="line">console.log(Number.isNaN(123))&#x2F;&#x2F;false</span><br><span class="line">console.log(Number.isNaN(&#39;str&#39;))&#x2F;&#x2F;false</span><br><span class="line">console.log(typeof NaN) &#x2F;&#x2F;number</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>Number.parseInt 将字符串转化为整数,如果不能正确转换则返回NaN,是小数的话直接返回整数部分</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  console.log(Number.parseInt(&#39;34234&#39;)) &#x2F;&#x2F;34234</span><br><span class="line">    console.log(Number.parseInt(&#39;34234.435434&#39;))&#x2F;&#x2F;34234</span><br><span class="line">    console.log(Number.parseInt(&#39;sdfjkl&#39;))&#x2F;&#x2F;NaN</span><br><span class="line">   console.log(Number.parseInt(&#39;55dsfsd434&#39;)) &#x2F;&#x2F;55</span><br><span class="line">console.log(Number.parseInt(&#39;dfsf4455dsfsd434&#39;))NaN</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Number.parseFloat 将字符串转换为浮点型数字<br>整数直接返回整数, 数字加其他的字符串返回最前边数字部分</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.parseFloat(&#39;123.555&#39;)) &#x2F;&#x2F;123.555</span><br><span class="line">  console.log(Number.parseFloat(&#39;123&#39;))&#x2F;&#x2F;123</span><br><span class="line">  console.log(Number.parseFloat(&#39;4455dsfsd&#39;)) &#x2F;&#x2F;445</span><br><span class="line">console.log(Number.parseFloat(&#39;4455dsfsd434&#39;)) &#x2F;&#x2F;4455</span><br><span class="line">console.log(Number.parseFloat(&#39;dfsf4455dsfsd434&#39;))NaN</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>Number.isInteger() 判断传入值是否为整数.</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.isInteger(45))&#x2F;&#x2F;true</span><br><span class="line">console.log(Number.isInteger(45.0))&#x2F;&#x2F;true</span><br><span class="line">console.log(Number.isInteger(45.34))&#x2F;&#x2F;false</span><br><span class="line">console.log(Number.isInteger(&#39;DSFSAF&#39;))&#x2F;&#x2F;false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>**Number.prototype.toFixed 将传入值 四舍五入保留几位.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; 134234.299</span><br><span class="line">console.log(num.toFixed(2))&#x2F;&#x2F;134234.30</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/01/null%E5%92%8Cundefined%E8%AF%A6%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -640,13 +782,12 @@
       
         
           
-            <p>###区别</p>
-<ul>
+            <h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ul>
 <li><p>undefined： 声明了变量，但未赋值。例如：var a；</p>
 </li>
 <li><p>null：声明了某一变量，并赋值，只是值为空。例如：var obj = null, 用来释放内存.依然保持变量名存在</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">typeof(null) &#x2F;&#x2F;object</span><br><span class="line"> console.log(null &#x3D;&#x3D; undefined)&#x2F;&#x2F;true</span><br><span class="line"> console.log(null &#x3D;&#x3D;&#x3D; undefined)&#x2F;&#x2F;false</span><br></pre></td></tr></table></figure>
-<p>###判断一个变量是否声明<br>因为尚不知变量是否声明,所以不能通过值来判断.可以通过判断变量的类型是否为undefined 来判断,但是不能通过变量的值(变量===’undefine’)来判断</p>
+<h3 id="判断一个变量是否声明"><a href="#判断一个变量是否声明" class="headerlink" title="判断一个变量是否声明"></a>判断一个变量是否声明</h3><p>因为尚不知变量是否声明,所以不能通过值来判断.可以通过判断变量的类型是否为undefined 来判断,但是不能通过变量的值(变量===’undefine’)来判断</p>
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof spx &#x3D;&#x3D; &#39;undefined&#39;)&#x2F;&#x2F;true</span><br><span class="line">console.log(spx &#x3D;&#x3D;&#x3D; &#39;undefined&#39;)&#x2F;&#x2F;会报refrenceError spx is not  defined</span><br></pre></td></tr></table></figure>
@@ -795,7 +936,7 @@
       
         
           
-            <p>###对象的概念<br>   因为js中没有真正类的概念. js的实例对象都是通过函数的构造函数调用生成的(new),  对象和对象 通过[[prototype]]建立联系.在js里函数本身也是对象.</p>
+            <h3 id="对象的概念"><a href="#对象的概念" class="headerlink" title="对象的概念"></a>对象的概念</h3><p>   因为js中没有真正类的概念. js的实例对象都是通过函数的构造函数调用生成的(new),  对象和对象 通过[[prototype]]建立联系.在js里函数本身也是对象.</p>
 <p>对象的属性名必须是字符串类型.如果不是字符串类型会自动转为字符串类型. obj.key 和obj[key] 的区别是 obj[key] 可以加入计算属性</p>
 <ul>
 <li><strong>可枚举性</strong>:属性是否可以在for in 中遍历到</li>
@@ -846,148 +987,6 @@
 </ol>
 <p>#####比较两个对象<br>两个对象通过== ===进行比较 .实际上比较的是内存的位置是否一样,而不是像基本类型那样比较值是否相等</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let a &#x3D; &#123;</span><br><span class="line">    name:&#39;jack&#39;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let b &#x3D; &#123;</span><br><span class="line">    name:&#39;jack&#39;</span><br><span class="line">&#125;</span><br><span class="line">let c &#x3D; b</span><br><span class="line">console.log(a &#x3D;&#x3D;&#x3D; b) &#x2F;&#x2F;false</span><br><span class="line">console.log(a &#x3D;&#x3D; b) &#x2F;&#x2F;false</span><br><span class="line">console.log(c &#x3D;&#x3D; b)  &#x2F;&#x2F;true</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/01/vue%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9B%B8%E5%85%B3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Song px">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/h.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="日常总结">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/01/vue%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9B%B8%E5%85%B3/" itemprop="url">vue组件化相关</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-01T12:46:41+08:00">
-                2020-07-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>###组件化</p>
 
           
         
@@ -1185,6 +1184,175 @@ console.log( it.next())</code></pre><p><del>~</del></p>
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Song px">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/h.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="日常总结">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/22/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/" itemprop="url">浏览器的渲染机制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-22T12:46:41+08:00">
+                2019-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="浏览器的组成"><a href="#浏览器的组成" class="headerlink" title="浏览器的组成"></a>浏览器的组成</h4><p>浏览器由两部分组成 渲染引擎, 和js引擎.</p>
+<ul>
+<li><p><strong>常见浏览器内核</strong>:IE safari chrome firfox Edge</p>
+</li>
+<li><p><strong>浏览器的渲染分为四个阶段</strong></p>
+<ol>
+<li>将html解析成dom树,将css解析成样式书</li>
+<li>将dom树和样式树合并成 渲染树 render tree</li>
+<li>计算出渲染树的页面布局 layout</li>
+<li>将渲染树绘制到屏幕上.</li>
+</ol>
+</li>
+</ul>
+<p>这四步不是按顺序执行的,有可能第一步没执行完,后边的就开始执行了</p>
+<ul>
+<li><p><strong>流和绘</strong><br>流:渲染树到布局的过程叫流flow<br>绘制:布局到页面这个过程叫做绘制</p>
+</li>
+<li><p><strong>流和绘会占用大量的资源</strong><br>  他们具有阻塞效应,会消耗很多事件和计算资源</p>
+</li>
+<li><p><strong>重流和重绘的关系 :重流必然导致重绘,重绘,不一定会重流.</strong><br> 比如改变某个元素的颜色,会导致重绘,但是不会导致重流.改变页面布局一定会导致重流重绘<br>浏览器会将重流和重绘控制在相关的子渲染树上,避免不必要的性能消耗.</p>
+</li>
+</ul>
+<p>-<strong>避免减少重流和重绘的方法</strong><br>  作为开发者,我们应当尽量减少重流和重绘</p>
+<ol>
+<li>避免操作高层dom</li>
+<li>flex布局和table布局消耗很大,能不动就不动</li>
+<li>使用requestAnimationFrame 将重绘放到下次重流集中处理.</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1235,7 +1403,7 @@ console.log( it.next())</code></pre><p><del>~</del></p>
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1246,7 +1414,7 @@ console.log( it.next())</code></pre><p><del>~</del></p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
