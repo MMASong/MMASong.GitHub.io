@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="区别 undefined： 声明了变量，但未赋值。例如：var a；  null：声明了某一变量，并赋值，只是值为空。例如：var obj &#x3D; null, 用来释放内存.依然保持变量名存在 123typeof(null) &#x2F;&#x2F;object console.log(null &#x3D;&#x3D; undefined)&#x2F;&#x2F;true console.log(n">
+<meta name="description" content="comp 作用 vue.componet :主要作用是用来注册一个全局组件,返回值是这个组件的构造方法 Vue.extend 主要作用是用来实现一个组件的构造方法.    使用 Vue.componet(name,xx),第二个参数可以是一个组件的配置对象,也可以是一个组件的构造函数 Vue.extend(组件的配置对象)####区别 Vue.componet 虽然也能得到构造函数,但是他会有副作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="null和undefined详解">
-<meta property="og:url" content="http://yoursite.com/2020/07/01/null%E5%92%8Cundefined%E8%AF%A6%E8%A7%A3/index.html">
+<meta property="og:title" content="componet和extend">
+<meta property="og:url" content="http://yoursite.com/2019/03/01/componet%E5%92%8Cextend/index.html">
 <meta property="og:site_name" content="日常总结">
-<meta property="og:description" content="区别 undefined： 声明了变量，但未赋值。例如：var a；  null：声明了某一变量，并赋值，只是值为空。例如：var obj &#x3D; null, 用来释放内存.依然保持变量名存在 123typeof(null) &#x2F;&#x2F;object console.log(null &#x3D;&#x3D; undefined)&#x2F;&#x2F;true console.log(n">
+<meta property="og:description" content="comp 作用 vue.componet :主要作用是用来注册一个全局组件,返回值是这个组件的构造方法 Vue.extend 主要作用是用来实现一个组件的构造方法.    使用 Vue.componet(name,xx),第二个参数可以是一个组件的配置对象,也可以是一个组件的构造函数 Vue.extend(组件的配置对象)####区别 Vue.componet 虽然也能得到构造函数,但是他会有副作">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-01T04:46:41.000Z">
-<meta property="article:modified_time" content="2020-07-03T07:06:36.546Z">
+<meta property="article:published_time" content="2019-03-01T04:46:41.000Z">
+<meta property="article:modified_time" content="2020-07-10T03:27:47.494Z">
 <meta property="article:author" content="Song px">
 <meta name="twitter:card" content="summary">
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/01/null和undefined详解/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/01/componet和extend/"/>
 
 
 
 
 
-  <title>null和undefined详解 | 日常总结</title>
+  <title>componet和extend | 日常总结</title>
   
 
 
@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/01/null%E5%92%8Cundefined%E8%AF%A6%E8%A7%A3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/01/componet%E5%92%8Cextend/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Song px">
@@ -259,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">null和undefined详解</h1>
+          <h1 class="post-title" itemprop="name headline">componet和extend</h1>
         
 
         <div class="post-meta">
@@ -271,8 +271,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-01T12:46:41+08:00">
-                2020-07-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-01T12:46:41+08:00">
+                2019-03-01
               </time>
             
 
@@ -294,8 +294,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
                   </a>
                 </span>
 
@@ -331,20 +331,29 @@
       
 
       
-        <h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ul>
-<li><p>undefined： 声明了变量，但未赋值。例如：var a；</p>
-</li>
-<li><p>null：声明了某一变量，并赋值，只是值为空。例如：var obj = null, 用来释放内存.依然保持变量名存在</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">typeof(null) &#x2F;&#x2F;object</span><br><span class="line"> console.log(null &#x3D;&#x3D; undefined)&#x2F;&#x2F;true</span><br><span class="line"> console.log(null &#x3D;&#x3D;&#x3D; undefined)&#x2F;&#x2F;false</span><br></pre></td></tr></table></figure>
-<h3 id="判断一个变量是否声明"><a href="#判断一个变量是否声明" class="headerlink" title="判断一个变量是否声明"></a>判断一个变量是否声明</h3><p>因为尚不知变量是否声明,所以不能通过值来判断.可以通过判断变量的类型是否为undefined 来判断,但是不能通过变量的值(变量===’undefine’)来判断</p>
+        <p>comp</p>
+<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ul>
+<li>vue.componet :主要作用是用来注册一个全局组件,返回值是这个组件的构造方法<ul>
+<li>Vue.extend 主要作用是用来实现一个组件的构造方法.</li>
+</ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof spx &#x3D;&#x3D; &#39;undefined&#39;)&#x2F;&#x2F;true</span><br><span class="line">console.log(spx &#x3D;&#x3D;&#x3D; &#39;undefined&#39;)&#x2F;&#x2F;会报refrenceError spx is not  defined</span><br></pre></td></tr></table></figure>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ul>
+<li>Vue.componet(name,xx),第二个参数可以是一个组件的配置对象,也可以是一个组件的构造函数<ul>
+<li>Vue.extend(组件的配置对象)<br>####区别</li>
+<li>Vue.componet 虽然也能得到构造函数,但是他会有副作用(全局注册了一个组件)</li>
+<li>Vue.componet 可以单纯的得到构造函数.没有副作用</li>
+</ul>
+</li>
+</ul>
+<h3 id="指令-虽然vue主要使用组件的形式进行复用-但是不可避免的要进行一些底层dom操作-vue的指令就是用来实现这些dom操作复用的"><a href="#指令-虽然vue主要使用组件的形式进行复用-但是不可避免的要进行一些底层dom操作-vue的指令就是用来实现这些dom操作复用的" class="headerlink" title="指令:虽然vue主要使用组件的形式进行复用,但是不可避免的要进行一些底层dom操作..vue的指令就是用来实现这些dom操作复用的."></a>指令:虽然vue主要使用组件的形式进行复用,但是不可避免的要进行一些底层dom操作..vue的指令就是用来实现这些dom操作复用的.</h3><ul>
+<li>场景:例如 焦点获取了.权限显示控制了.等等</li>
+<li>使用:分为全局,和组件内的.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(&#39;permission&#39;,&#123;</span><br><span class="line">  bind(el,bindding) &#123;</span><br><span class="line">  </span><br><span class="line">     if(bindding.value !&#x3D;&#x3D; &#39;spx&#39;) el.style.display&#x3D;&quot;none&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+钩子函数常用的有<br>`’bind：只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。</li>
+</ul>
+<p>inserted：被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)。</p>
+<p>update：所在组件的 VNode 更新时调用.</p>
 
-<p>判断变量的值是否为空,直接通过(!变量)会很粗糙.不准确因为<br>以下几种情况都会为true</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(!&#39;&#39;)</span><br><span class="line">console.log(!null)</span><br><span class="line">console.log(!undefined)</span><br><span class="line">console.log(!0)</span><br></pre></td></tr></table></figure>
-<p>严谨的做法为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let str;</span><br><span class="line">console.log(typeof str &#x3D;&#x3D; &#39;undefined&#39; &amp;&amp; !str)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -368,18 +377,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/06/14/%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E6%A6%82%E5%BF%B5/" rel="next" title="迭代器的概念">
-                <i class="fa fa-chevron-left"></i> 迭代器的概念
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/01/Number%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3/" rel="prev" title="Number类型相关">
-                Number类型相关 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/22/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/" rel="prev" title="浏览器的渲染机制">
+                浏览器的渲染机制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -507,7 +512,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#区别"><span class="nav-number">1.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断一个变量是否声明"><span class="nav-number">2.</span> <span class="nav-text">判断一个变量是否声明</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用"><span class="nav-number">1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指令-虽然vue主要使用组件的形式进行复用-但是不可避免的要进行一些底层dom操作-vue的指令就是用来实现这些dom操作复用的"><span class="nav-number"></span> <span class="nav-text">指令:虽然vue主要使用组件的形式进行复用,但是不可避免的要进行一些底层dom操作..vue的指令就是用来实现这些dom操作复用的.</span></a></div>
             
 
           </div>
